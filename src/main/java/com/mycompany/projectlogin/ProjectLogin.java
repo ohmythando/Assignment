@@ -13,52 +13,54 @@ import java.util.Scanner;
 public class ProjectLogin {
 
     public static void main(String[] args) {
+          login system = new login();
         
-      login system = new login();
-      
         Scanner sc = new Scanner(System.in);
-           //  make use of a boolean to have true or false options 
+        // Use a boolean for true or false options 
         boolean isAccountCreated = false;
         System.out.println("Please register an account");
-//  Asking for creditienials  details with use of a while loop
+        // Ask for credentials details with the use of a while loop
         while (!isAccountCreated) {
+            //firstName
             System.out.print("Enter first name: ");
-            String firstname = sc.nextLine();
-            system.setFirstName(firstname);
+            system.firstName = sc.nextLine();
+            //lastName
             System.out.print("Enter last name: ");
-            String lastname = sc.nextLine();
-            system.setLastName(lastname);
+            system.lastName = sc.nextLine();
+            //username
             System.out.print("Enter username: ");
-            String username = sc.nextLine();
-            system.setUsername(username);
+            system.username = sc.nextLine();
+            //Password
             System.out.print("Enter password: ");
-            String password = sc.nextLine();
-            system.setPassword(password);
-        // Make use of if statements to set statement true   
+            system.password = sc.nextLine();
+
+            // Use if statements to set the account creation status to true   
             String registrationStatus = system.registerUser();
             System.out.println(registrationStatus);
             if (registrationStatus.contains("successfully")) {
-                system.CreatAccount(username, password, firstname, lastname);
+                system.createAccount(system.username, system.password, system.firstName, system.lastName);
                 isAccountCreated = true;
             }
         }
-// continue to login  into account when login is  successful
+ 
+        // Continue to log into the account when login is successful
         System.out.println("Login:");
-        //Make use of  a boolean 
-        boolean loginStatus=false;
-        //Make use of a while loop
-        while(!loginStatus){
-        System.out.print("Enter username: ");
-        String loginUsername = sc.nextLine();
-        System.out.print("Enter password: ");
-        String loginPassword = sc.nextLine();
-        
-// attempt  to  login into system
-       loginStatus = system.loginuser(loginUsername, loginPassword);
-       
-        // Display  message 
-        String loginMessage = system.returnLoginStatus(loginStatus);
-        System.out.println(loginMessage);
+        // Use a boolean to track login status
+        boolean loginStatus = false;
+        // Use a while loop to continously prompt the users  login attempts
+        while (!loginStatus) {
+            System.out.print("Enter username: ");
+            String loginUsername = sc.nextLine();
+            System.out.print("Enter password: ");
+            String loginPassword = sc.nextLine();
+
+            // Attempt to log into the system
+            loginStatus = system.loginUser(loginUsername, loginPassword);
+
+            // Display message based on login attempt result
+            String loginMessage = system.returnLoginStatus(loginStatus);
+            System.out.println(loginMessage);
+        }
     }
 }
-}
+     

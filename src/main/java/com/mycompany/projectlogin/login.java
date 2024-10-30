@@ -9,95 +9,132 @@ package com.mycompany.projectlogin;
  * @author thand
  */
 public class login {
-    // private declarations
-    private String username;
-    private String password;
-    private String firstname;
-    private String lastname;
-
- public login (String username,String password,
-    String firstsname, String lastname){ 
-        this.username= username;
-        this.password= password;
-        this.firstname = firstname;
-        this.lastname= lastname; 
+      // Declare variables  as private to store user registration details
+  String username;
+   String password;
+     String firstName;
+   String lastName;
+    private boolean isRegistered;
+    
+    /**
+     * Constructor initializes user registration status
+     */
+    public login() {
+        this.isRegistered = false;
     }
- public login (){
-                }
- // Assign each variable with its correct  parameter
- public void setFirstName(String firstname) {
-    this.firstname = firstname; 
-}
-public void setLastName(String lastname) {
-    this.lastname = lastname;
-} 
- public String getFirstName() {
-    return this.firstname;
-}
- //getters
- 
-public String getLastName() {
-    return this.lastname;
-}
-public String getusername() {
-    return this.username;
-}
-public void setUsername(String username) {
-    this.username = username;
-}
-public String getPassword() {
-    return this.password;
-}
-public void setPassword(String password) {
-    this.password = password;
-}
 
-//use a boolean that checks requirements 
-public boolean checkusername(){
-return username.contains("_") && username.length() <=5;
-}
-// make use of a Boolean  to  check  that requirements are met 
-   public boolean checkPasswordComplexity() {
-    // Set parameters  Check for at least one uppercase letter, one number, and one special character
-    return password.length() >= 8 &&
-           password.matches(".*[A-Z].*") && 
-           password.matches(".*[0-9].*") && 
-           password.matches(".*[!@#$%^&*()_+-=].*"); 
-}
-//Make use of  if  statements to return  and display messages 
-     public String registerUser() {
-        if (!checkusername()) {
-           //return and display
+    //Validates username format &@return true if username meets requirements, false otherwise
+     
+    public boolean checkUsername() {
+        if (username == null) {
+            return false;
+        }
+        return username.contains("_") && username.length() <= 5;
+    }
+
+    // Validates password complexity requirements ,@return true if password meets complexity requirements, false otherwise
+     
+    public boolean checkPasswordComplexity() {
+        if (password == null) {
+            return false;
+        }
+        // Check for minimum length of 8 characters
+        boolean hasLength = password.length() >= 8;
+        // Check for at least one uppercase letter
+        boolean hasUppercase = password.matches(".*[A-Z].*");
+        // Check for at least one number
+        boolean hasNumber = password.matches(".*[0-9].*");
+        // Check for at least one special character
+        boolean hasSpecial = password.matches(".*[!@#$%^&*()_+-=].*");
+
+        return hasLength && hasUppercase && hasNumber && hasSpecial;
+    }
+
+    // Register a new user with provided credentials along with  @return Status message indicating registration success or failure
+    public String registerUser() {
+        // Check username format
+        if (!checkUsername()) {
             return "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
         }
+        
+        // Check password complexity
         if (!checkPasswordComplexity()) {
-             //return and display
             return "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number and a special character.";
-        } 
-         //return and display
-        return "Username successfully captured\nPassword successfully captured";
+        }
+        
+        // Set registration status to true if all validations pass
+        this.isRegistered = true;
+        return "Username and password successfully captured\nUser has been registered successfully!";
     }
- //make use of a boolean to return statements with the set  conditions 
-    public boolean loginuser(String username,String password){
-        return this.username.equals(username) && 
-         this.password.equals(password);
-         }
- public String returnLoginStatus(boolean loginStatus){
-     if (loginStatus){
-         // return and display message
-     return "Welcome " + firstname + ", " + lastname + " It is great to see you again.";
- }
-     // return and display message
-    return "Username or password incorrect, please try again";
- }
- public void CreatAccount(String username, String password, String firstName, String lastName) {
+
+    /**
+     * Authenticate the  user login attempt
+     * @param username
+     * @param password
+     * @parameter  username entered username
+     * @parameter password entered password
+     * @return true if login successful, false otherwise
+     */
+    public boolean loginUser(String username, String password) {
+        // Check if user is registered and credentials match
+        return isRegistered && 
+               this.username != null && 
+               this.password != null && 
+               this.username.equals(username) && 
+               this.password.equals(password);
+    }
+
+    /**
+     * Generates login status message
+     * @param loginStatus result of login attempt
+     * @return appropriate message based on login status
+     */
+    public String returnLoginStatus(boolean loginStatus) {
+        if (loginStatus) {
+            return String.format("Welcome %s %s. It is great to see you again.", 
+                               firstName, lastName);
+        }
+        return "Username or password incorrect, please try again.";
+    }
+
+    /**
+     * Creates a new user account with the orinally  provided details
+     * @param username desired username
+     * @param password desired password
+     * @param firstName user's first name
+     * @param lastName user's last name
+     */
+    public void createAccount(String username, String password, String firstName, String lastName) {
         this.username = username;
         this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        //display message 
-        System.out.println("Account created successfully!");
- }
+        this.firstName = firstName;
+        this.lastName = lastName;
+        System.out.println("Account details captured successfully!");
+    }
 
-   
+    // Getter methods for testing purposes 
+    //Getter for username
+    public String getUsername() {
+        //return username
+        return username;
+    }
+    //Getter for password 
+    public String getPassword() {
+        //return password 
+        return password;
+    }
+//Getter for firstName
+    public String getFirstName() {
+        //retuen firtName
+        return firstName;
+    }
+//Getter for lastname
+    public String getLastName() {
+        //return Lastname
+        return lastName;
+    }
+
+    public boolean isRegistered() {
+        return isRegistered;
+    }
 }
