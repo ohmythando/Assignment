@@ -24,8 +24,7 @@ public final class Task {
     private static int totalHours = 0; // Adds up the time of all tasks
 
     // Constructor to create a new Task object
-    public Task(String taskName, String taskDescription, String developerDetails, 
-                int taskDuration, String taskStatus) {
+    public Task(String taskName, String taskDescription, String developerDetails, int taskDuration, String taskStatus) {
         this.taskName = taskName; // Set the task name
         this.taskNumber = taskCounter++; // Assign a number to this task and increase the counter
         this.taskDescription = taskDescription; // Set the task description

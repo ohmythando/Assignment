@@ -102,36 +102,30 @@ public class EasyKanban {
     }
 // method to add tasks 
     private void addTasks() {
-        int numTasks = Integer.parseInt(JOptionPane.showInputDialog("How many tasks would you like to add?"));
+         // User input for number of tasks
+        int numTasks = Integer.parseInt(JOptionPane.showInputDialog("How many tasks would you like to enter?"));
 
         for (int i = 0; i < numTasks; i++) {
-            String taskName = JOptionPane.showInputDialog("Enter task name:");
-            String taskDescription = JOptionPane.showInputDialog("Enter task description (max 50 chars):");
-            String developerDetails = JOptionPane.showInputDialog("Enter developer full name:");
-            int taskDuration = Integer.parseInt(JOptionPane.showInputDialog("Enter task duration (hours):"));
-
-            String[] statusOptions = {"To Do", "Done", "Doing"};
-            String taskStatus = (String) JOptionPane.showInputDialog(null,
-                    "Select task status:", "Task Status",
-                    JOptionPane.QUESTION_MESSAGE, null,
-                    statusOptions, statusOptions[0]);
-
-            Task task = new Task(taskName, taskDescription, developerDetails, taskDuration, taskStatus);
-// if statement to validate task description 
-            if (!task.checkTaskDescription()) {
-                JOptionPane.showMessageDialog(null,
-                        "Please enter a task description of less than 50 characters");
-                i--; // Retry this task
-                continue;
-            }
-//task details
-            tasks.add(task);
-            developers.add(developerDetails);
-            taskNames.add(taskName);
-            taskIDs.add(task.createTaskID());
-            taskDurations.add(taskDuration);
-            taskStatuses.add(taskStatus);
-
+            Task task = new Task();
+            String taskDescription;
+            
+            // Get task details from user
+            task.setTaskName(JOptionPane.showInputDialog("Enter task name:"));
+            
+            // Loop until valid task description is entered
+            do {
+                taskDescription = JOptionPane.showInputDialog("Enter task description (max 50 characters):");
+                task.setTaskDescription(taskDescription);
+                
+                if (taskDescription.length() > 50) {
+                    JOptionPane.showMessageDialog(null, "Please enter a task description of less than 50 characters");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Task successfully captured");
+                    break;
+                }
+            } while (taskDescription.length() > 50);
+            ask.setTaskNumber(i);
+            task.setDeveloperDetails(JOptionPane.showInputDialog("Enter developer first and last name:"));
             JOptionPane.showMessageDialog(null,
                     "Task successfully captured\n\n" + task.printTaskDetails());
         }
