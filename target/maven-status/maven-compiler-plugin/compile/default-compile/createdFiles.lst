@@ -1,4 +1,5 @@
 com\mycompany\projectlogin\EasyKanban.class
 com\mycompany\projectlogin\ProjectLogin.class
 com\mycompany\projectlogin\login.class
+com\mycompany\projectlogin\login$User.class
 com\mycompany\projectlogin\Task.class

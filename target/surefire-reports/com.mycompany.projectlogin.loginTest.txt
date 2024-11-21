@@ -1,0 +1,81 @@
+-------------------------------------------------------------------------------
+Test set: com.mycompany.projectlogin.loginTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 11, Skipped: 0, Time elapsed: 1.554 s <<< FAILURE! -- in com.mycompany.projectlogin.loginTest
+com.mycompany.projectlogin.loginTest.testReturnLoginStatus_SuccessfulLogin -- Time elapsed: 0.725 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "firstName" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testReturnLoginStatus_SuccessfulLogin(loginTest.java:73)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testLoginUser_SuccessfulLogin -- Time elapsed: 0.009 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.mycompany.projectlogin.login.createAccount(String, String, String, String)" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testLoginUser_SuccessfulLogin(loginTest.java:61)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testLoginUser_UnsuccessfulLogin -- Time elapsed: 0.019 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.mycompany.projectlogin.login.createAccount(String, String, String, String)" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testLoginUser_UnsuccessfulLogin(loginTest.java:67)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testCheckPasswordComplexity_ValidPassword -- Time elapsed: 0.020 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "password" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testCheckPasswordComplexity_ValidPassword(loginTest.java:25)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testRegisterUser_ValidUsernameAndPassword -- Time elapsed: 0.016 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "username" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testRegisterUser_ValidUsernameAndPassword(loginTest.java:37)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testRegisterUser_InvalidUsername -- Time elapsed: 0.049 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "username" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testRegisterUser_InvalidUsername(loginTest.java:45)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testReturnLoginStatus_UnsuccessfulLogin -- Time elapsed: 0.073 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.mycompany.projectlogin.login.returnLoginStatus(boolean)" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testReturnLoginStatus_UnsuccessfulLogin(loginTest.java:82)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testCheckUsername_ValidUsername -- Time elapsed: 0.012 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "username" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testCheckUsername_ValidUsername(loginTest.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testCheckPasswordComplexity_InvalidPassword -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "password" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testCheckPasswordComplexity_InvalidPassword(loginTest.java:31)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testRegisterUser_InvalidPassword -- Time elapsed: 0.040 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "username" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testRegisterUser_InvalidPassword(loginTest.java:53)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mycompany.projectlogin.loginTest.testCheckUsername_InvalidUsername -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.NullPointerException: Cannot assign field "username" because "this.loginSystem" is null
+	at com.mycompany.projectlogin.loginTest.testCheckUsername_InvalidUsername(loginTest.java:19)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

@@ -42,7 +42,7 @@ public class TaskTest {
     @Test
     public void testCheckTaskDescription() {
         System.out.println("checkTaskDescription");
-        Task instance = new Task();
+        Task instance = null;
         boolean expResult = false;
         boolean result = instance.checkTaskDescription();
         assertEquals(expResult, result);
@@ -56,7 +56,7 @@ public class TaskTest {
     @Test
     public void testCreateTaskID() {
         System.out.println("createTaskID");
-        Task instance = new Task();
+        Task instance = null;
         String expResult = "";
         String result = instance.createTaskID();
         assertEquals(expResult, result);
@@ -70,7 +70,7 @@ public class TaskTest {
     @Test
     public void testPrintTaskDetails() {
         System.out.println("printTaskDetails");
-        Task instance = new Task();
+        Task instance = null;
         String expResult = "";
         String result = instance.printTaskDetails();
         assertEquals(expResult, result);
@@ -84,115 +84,20 @@ public class TaskTest {
     @Test
     public void testReturnTotalHours() {
         System.out.println("returnTotalHours");
-        Task instance = new Task();
         int expResult = 0;
-        int result = instance.returnTotalHours();
+        int result = Task.returnTotalHours();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setTaskName method, of class Task.
+     * Test of resetTaskCounter method, of class Task.
      */
     @Test
-    public void testSetTaskName() {
-        System.out.println("setTaskName");
-        String taskName = "";
-        Task instance = new Task();
-        instance.setTaskName(taskName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTaskNumber method, of class Task.
-     */
-    @Test
-    public void testSetTaskNumber() {
-        System.out.println("setTaskNumber");
-        int taskNumber = 0;
-        Task instance = new Task();
-        instance.setTaskNumber(taskNumber);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTaskDescription method, of class Task.
-     */
-    @Test
-    public void testSetTaskDescription() {
-        System.out.println("setTaskDescription");
-        String taskDescription = "";
-        Task instance = new Task();
-        instance.setTaskDescription(taskDescription);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDeveloperDetails method, of class Task.
-     */
-    @Test
-    public void testSetDeveloperDetails() {
-        System.out.println("setDeveloperDetails");
-        String developerDetails = "";
-        Task instance = new Task();
-        instance.setDeveloperDetails(developerDetails);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTaskDuration method, of class Task.
-     */
-    @Test
-    public void testSetTaskDuration() {
-        System.out.println("setTaskDuration");
-        int taskDuration = 0;
-        Task instance = new Task();
-        instance.setTaskDuration(taskDuration);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTaskStatus method, of class Task.
-     */
-    @Test
-    public void testSetTaskStatus() {
-        System.out.println("setTaskStatus");
-        String taskStatus = "";
-        Task instance = new Task();
-        instance.setTaskStatus(taskStatus);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTaskID method, of class Task.
-     */
-    @Test
-    public void testSetTaskID() {
-        System.out.println("setTaskID");
-        String taskID = "";
-        Task instance = new Task();
-        instance.setTaskID(taskID);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTaskStatus method, of class Task.
-     */
-    @Test
-    public void testGetTaskStatus() {
-        System.out.println("getTaskStatus");
-        Task instance = new Task();
-        String expResult = "";
-        String result = instance.getTaskStatus();
-        assertEquals(expResult, result);
+    public void testResetTaskCounter() {
+        System.out.println("resetTaskCounter");
+        Task.resetTaskCounter();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
